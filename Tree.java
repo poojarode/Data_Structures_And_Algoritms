@@ -26,7 +26,7 @@ class Tree{
 	}
 	
 	public static void preTraverse(Node node){
-		if (node==null) {
+		if(node==null) {
 			return;
 		}
 		System.out.print(" " + node.data);

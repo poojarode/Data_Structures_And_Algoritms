@@ -51,4 +51,20 @@ class InPre{
 		node.right = buildTree(pre, in, pos+1, en);
 		return node;
 	}
+	public static Node buildTree1(int pre[], int in[], int st, int en){
+		if(st > en) {
+			return null;
+		}
+		
+		int curr = pre[idx];
+		idx++;
+		Node node = new Node(curr);
+		if(st == en) {
+			return node;
+		}
+		int pos = search(in, st, en, curr);
+		node.left = buildTree(pre, in , st, pos-1);
+		node.right = buildTree(pre, in, pos+1, en);
+		return node;
+	}
 }
